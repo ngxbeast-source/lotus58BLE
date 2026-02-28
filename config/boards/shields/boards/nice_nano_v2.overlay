@@ -31,7 +31,7 @@
         spi-max-frequency = <4000000>;
 
         /* WS2812 */
-        chain-length = <1>; /* Number of LEDs */
+        chain-length = <30>; /* Number of LEDs */
         spi-one-frame = <0x70>;
         spi-zero-frame = <0x40>;
 
