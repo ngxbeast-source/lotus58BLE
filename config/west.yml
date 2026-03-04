@@ -18,6 +18,8 @@ manifest:
       url-base: https://github.com/s6t
     - name: infely
       url-base: https://github.com/infely
+    - name: kevinpastor
+      url-base: https://github.com/kevinpastor
     # Additional modules containing boards/shields/custom code can be listed here as well
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
   projects:
@@ -42,6 +44,9 @@ manifest:
       revision: main
     - name: nice-view-battery
       remote: infely
+      revision: main
+    - name: nice-view-elemental
+      remote: kevinpastor
       revision: main
   self:
     path: config
