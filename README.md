@@ -7,3 +7,4 @@ OLED and RGB are now functioning. Not sure about the custom firmware but the oth
 
 TO DO:
 Per layer lighting?
+RGBs seem to shut off quickly, will look into it at some point...
