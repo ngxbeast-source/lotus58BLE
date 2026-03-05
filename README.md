@@ -1,4 +1,5 @@
 Lotus 58 GLOW BLE
+nrF52840 (https://www.aliexpress.us/item/3256808840197195)
 
 04 MAR 2026
 
