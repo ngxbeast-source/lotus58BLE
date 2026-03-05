@@ -1,5 +1,5 @@
 Lotus 58 GLOW BLE
-nrF52840 (https://www.aliexpress.us/item/3256808840197195)
+([nrF52840 ](https://www.aliexpress.us/item/3256808840197195.html?spm=a2g0o.order_list.order_list_main.5.12c81802RBSu6q&gatewayAdapt=glo2usa))
 
 04 MAR 2026
 
