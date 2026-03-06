@@ -132,10 +132,10 @@
             &trans     &trans    &trans     &trans     &trans     &trans                               &trans     &trans     &trans     &trans      &trans      &trans   
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────╮   ╭──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
         //|          |          |          |          |          |          |          |   |          |          |          |          |          |          |          |    
-            &trans     &trans    &trans     &trans     &trans     &trans     &trans          &trans     &trans     &trans     &trans      &trans     &trans    &tran
+            &trans     &trans    &trans     &trans     &trans     &trans     &trans          &trans     &trans     &trans     &trans      &trans     &trans    &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
         //|          |          |          |          |          |          |          |   |          |          |          |                     |          |          |          
-           &trans     &trans     &trans      &trans     &trans    &trans     &trans         &trans     &trans     &trans     &trans      &trans     &trans    &tran
+           &trans     &trans     &trans      &trans     &trans    &trans     &trans         &trans     &trans     &trans     &trans      &trans     &trans    &trans
         //╰──────────┴──────────┼──────────┼──────────┼──────────┼──────────┼──────────╯   ╰──────────┼──────────┼──────────┼──────────┼──────────┼──────────┴──────────╯
         //                      |          |          |          |          |                         |          |          |          |          |
                                  &trans      &trans     &trans      &trans                             &trans     &trans     &trans     &trans
@@ -151,7 +151,7 @@
              bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮                         ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │          │                         │          │          │          │          │          │          │
-           &kp GRAVE ESC &kp N1  &kp N2     &kp N3     &kp N4     &kp N5                                &kp       &kp        &kp        &kp        &kps       &kp   
+           &kp GRAVE &kp N1  &kp N2     &kp N3     &kp N4     &kp N5                                &kp       &kp        &kp        &kp        &kps       &kp   
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤                         ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
         //|          |          |          |          |          |          |                         |          |          |          |          |          |          |
            &kp TAB       &kp Q      &kp W      &kp E      &kp R      &kp T                                &kp Y      &kp  U     &kp I      &kp O      &kps P     &kp    
