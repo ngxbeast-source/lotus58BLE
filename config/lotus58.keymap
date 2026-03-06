@@ -48,7 +48,6 @@
             mods = <(MOD_LGUI|MOD_RGUI)>;
         };
     };
-    / {
     macros {
         //LED toggle when on gaming layer
         ZMK_MACRO(gaming_layer,
