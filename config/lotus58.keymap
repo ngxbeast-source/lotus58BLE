@@ -48,22 +48,14 @@
             mods = <(MOD_LGUI|MOD_RGUI)>;
         };
     };
-    
+
     macros {
         //LED toggle when on gaming layer
         ZMK_MACRO(gaming_layer,
             bindings
                 = <&to 4>, <&rgb_ug RGB_COLOR_HSB(0, 100, 50)>;
         )
-        ZMK_MACRO(dfaul_layer_mo,
-             wait-ms = <0>;
-             tap-ms =  <0>;
-             bindings
-                = <&macro_press &mo 0>
-                , <&macro_tap &rgb_ug RGB_COLOR_HSB(300,100,50)>
-                , <&macro_pause_for_release>
-                , <&macro_release &mo 0>
-                , <&macro_tap &rgb_ug RGB_COLOR_HSB(300,100,50)>;;
+        ZMK_MACRO(dfaul_layer_mo, wait-ms = <0>; tap-ms =  <0>; bindings = <&macro_press &mo 0>, <&macro_tap &rgb_ug RGB_COLOR_HSB(300,100,50)>, <&macro_pause_for_release>, <&macro_release &mo 0>, <&macro_tap &rgb_ug RGB_COLOR_HSB(300,100,50)>;
         )
         //changes default layer LEDs "back" 
         ZMK_MACRO(dfaul_layer_tog,
