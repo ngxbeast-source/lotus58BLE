@@ -1,0 +1,81 @@
+/* ---- STEP 1: DEFINE LAYERS ---- */
+#define LAYER_ABC 0
+#define LAYER_XTRA 1
+#define LAYER_XTR2 2
+#define LAYER_XTR3 3
+#define LAYER_XTRA4 4
+#define LAYER_GAME 5
+#define LAYER_GFUN 6
+#define LAYER_GTGL 7
+#define LAYER_GME2 8
+#define LAYER_G2_1 9
+#define LAYER_TOG 10
+#define LAYER_T1 11
+#define LAYER_T1_1 12
+#define LAYER_T2 13
+#define LAYER_T2_1 14
+
+/* ---- STEP 1a: DEFINE COLORS ---- */
+#define RGB_ABC RGB_COLOR_HSB(19,100,17)      /* ABC */
+#define RGB_XTRA RGB_COLOR_HSB(175,100,30)      /* XTRA */
+#define RGB_XTR2 RGB_COLOR_HSB(100,100,30)      /* XTR2 */
+#define RGB_XTR3 RGB_COLOR_HSB(280,100,30)      /* XTR3 */
+#define RGB_XTRA4 RGB_COLOR_HSB(116,67,26)
+#define RGB_GAME RGB_COLOR_HSB(0,100,25)
+
+/* ---- HELPER DEFINITIONS ---- */
+#define BLINK_SEQ(ON, OFF, WAIT) \
+    &macro_tap &rgb_ug ON \
+    &macro_wait_time WAIT \
+    &macro_tap &rgb_ug RGB_TOG \
+    &macro_wait_time WAIT \
+    &macro_tap &rgb_ug RGB_TOG \
+    &macro_wait_time WAIT \
+    &macro_tap &rgb_ug RGB_TOG \
+    &macro_wait_time WAIT \
+    &macro_tap &rgb_ug RGB_TOG \
+    &macro_wait_time WAIT \
+    &macro_tap &rgb_ug OFF
+#define MOMENTARY_RGB_MACRO(node_name, node_label, layer, active_color, release_color) \
+        ZMK_MACRO(node_name, \
+            bindings = \
+                <&macro_press>, \
+                <&mo layer>, \
+                <&macro_tap>, \
+                <&rgb_ug active_color>, \
+                <&macro_pause_for_release>, \
+                <&macro_release>, \
+                <&mo layer>, \
+                <&macro_tap>, \
+                <&rgb_ug release_color>; \
+            label = node_label; \
+        )
+#define TO_RGB_MACRO(node_name, node_label, layer, color) \
+        ZMK_MACRO(node_name, \
+            bindings = \
+                <&macro_tap>, \
+                <&to layer>, \
+                <&macro_tap>, \
+                <&rgb_ug color>; \
+            label = node_label; \
+        )
+#define TO_RGB_PRESS_MACRO(node_name, node_label, layer, color) \
+        ZMK_MACRO(node_name, \
+            bindings = \
+                <&macro_tap>, \
+                <&to layer>, \
+                <&macro_press>, \
+                <&rgb_ug color>; \
+            label = node_label; \
+        )
+#define RGB_HOLD_TAP(node_name, node_label, macro_ref) \
+        node_name: node_name { \
+            compatible = "zmk,behavior-hold-tap"; \
+            label = node_label; \
+            bindings = <&macro_ref>, <&kp>; \
+            #binding-cells = <2>; \
+            tapping-term-ms = <200>; \
+            flavor = "tap-preferred"; \
+        };
+#define COMBO(name, bind, p1, p2, ...) \
+    name { bindings = <bind>; key-positions = <p1 p2>; layers = <__VA_ARGS__>; timeout-ms = <50>; }
