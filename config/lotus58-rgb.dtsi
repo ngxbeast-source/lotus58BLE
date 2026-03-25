@@ -54,7 +54,6 @@
 #define RGB_BLINK_ON RGB_COLOR_HSB(39,100,75)      /* Blink On - Bright Yellow (change to whatever you want, multiple colors can be made like shown below) */
 #define RGB_N_BLINK_ON RGB_COLOR_HSB(0,100,60)      /* Num On - Bright Red */
 #define RGB_C_BLINK_ON RGB_COLOR_HSB(200,100,60)      /* Caps On - Cyan */
-#define RGB_F_BLINK_ON RGB_COLOR_HSB(73,67,60)      /* Functions - Bright Emerald */
 
 /* ---- HELPER DEFINITIONS ---- */
 #define BLINK_SEQ(ON, OFF, WAIT) \
