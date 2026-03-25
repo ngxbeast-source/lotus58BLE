@@ -6,14 +6,14 @@
 #define XTR4 4
 #define GAME 5
 #define G1_1 6
-#define GTGL 7
+#define GG8 7
 #define GME2 8
 #define G2_1 9
 #define GME3 10
 #define G3_1 11
 #define GME4 12
 #define G4_1 13
-#define TOG 14
+#define GATE 14
 #define T1 15
 #define T1_1 16
 #define T1_2 17
@@ -33,14 +33,14 @@
 #define RGB_XTR4 RGB_COLOR_HSB(116,67,26)      /* SUB-LAYOUT  - Pale Green */
 #define RGB_GAME RGB_COLOR_HSB(0,100,25)      /* SUB-BASE    - Red */
 #define RGB_G1_1 RGB_COLOR_HSB(116,67,50)      /* SUB-LAYOUT - Bright Yellow */
-#define RGB_GTGL RGB_COLOR_HSB(200,100,60)      /* GATEWAY - Cyan */
+#define RGB_GG8 RGB_COLOR_HSB(200,100,60)      /* GATEWAY - Cyan */
 #define RGB_GME2 RGB_COLOR_HSB(73,67,15)      /* SUB-BASE    - Dim Emerald */
 #define RGB_G2_1 RGB_COLOR_HSB(67,55,20)      /* SUB-LAYOUT */
 #define RGB_GME3 RGB_COLOR_HSB(58,100,21)      /* SUB-BASE */
 #define RGB_G3_1 RGB_COLOR_HSB(58,100,40)      /* SUB-LAYOUT */
 #define RGB_GME4 RGB_COLOR_HSB(138,100,18)      /* SUB-BASE */
 #define RGB_G4_1 RGB_COLOR_HSB(58,100,40)      /* SUB-LAYOUT */
-#define RGB_LYR_TOG RGB_COLOR_HSB(251,67,60)      /* GATEWAY - Indigo */
+#define RGB_GATE RGB_COLOR_HSB(251,67,60)      /* GATEWAY - Indigo */
 #define RGB_T1 RGB_COLOR_HSB(40,50,12)      /* SUB-BASE  - Yellow */
 #define RGB_T1_1 RGB_COLOR_HSB(58,50,20)      /* SUB-LAYOUT */
 #define RGB_T1_2 RGB_COLOR_HSB(211,50,40)      /* SUB-LAYOUT */
@@ -143,8 +143,8 @@
         TO_RGB(to_rgb_g2_s1, "Toggle Game2 SubLayer1 LED", G2_1, RGB_G2_1)
         TO_RGB(to_rgb_g2, "Toggle Game2 LED", GME2, RGB_GME2)
         //Toggle Layers/Gateways
-        TO_RGB_PRESS(top_rgb_toglayers, "TO PRESS ToggleLayer", TOG, RGB_LYR_TOG)
-        TO_RGB_PRESS(top_rgb_gtog, "TO PRESS GameToggle", GTGL, RGB_GTGL)
+        TO_RGB_PRESS(top_rgb_toglayers, "TO PRESS ToggleLayer", GATE, RGB_GATE)
+        TO_RGB_PRESS(top_rgb_gtog, "TO PRESS GameToggle", GG8, RGB_GG8)
     };
     blnk: blnk {
                 compatible = "zmk,behavior-macro-one-param";
@@ -219,9 +219,9 @@
         CMB(game_toggle, &top_rgb_gtog, 55 56, GAME GME2);
         // To (Sub)Base
         CMB(gameLayer_2_BaseLayer, &to_rgb_default, 0 11, GAME);
-        CMB(gameLayer, &to_rgb_game, 0 11, ABC TOG GME2);
+        CMB(gameLayer, &to_rgb_game, 0 11, ABC GATE GME2);
         // "Exit" Combos; Return to (Sub)Base
-        CMB(toggleLayer_2_BaseLayer, &to_rgb_default, 55 56, TOG);
-        CMB(game_toggle_2_game, &to_rgb_game, 55 56, GTGL);
+        CMB(toggleLayer_2_BaseLayer, &to_rgb_default, 55 56, GATE);
+        CMB(game_toggle_2_game, &to_rgb_game, 55 56, GG8);
     };
  };
