@@ -137,7 +137,7 @@
         MO_RGB(mo_rgb_xtra2, "KeyPadLayer Momentary LED", XTR2, RGB_XTR2, RGB_ABC)
         MO_RGB(mo_rgb_xtr3, "ExtraLayer Momentary LED", XTR3, RGB_XTR3, RGB_ABC)
         MO_RGB(mo_rgb_xtr, "NumberRowLayer Momentary LED", XTRA, RGB_XTRA, RGB_ABC)
-        MO_RGB(mo_rgb_g1_s1, "GameLayer Sublayer Momentary LED", G1.1, RGB_G1.1, RGB_GAME)
+        MO_RGB(mo_rgb_g1_s1, "GameLayer Sublayer Momentary LED", G1_1, RGB_G1_1, RGB_GAME)
         MO_RGB(mo_rgb_t2_s1, "ToggleLayer2 SubLayer1 Momentary LED", T2_1, RGB_T2_1, RGB_T2)
         MO_RGB(mo_rgb_t1_s1, "ToggleLayer1 Sublayer1 Momentary LED", T1_1, RGB_T1_1, RGB_T1)
         MO_RGB(mo_rgb_g2_s1, "GameLayer2 SubLayer1 Momentary LED", G2_1, RGB_G2_1, RGB_GME2)
