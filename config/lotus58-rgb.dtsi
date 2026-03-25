@@ -3,7 +3,7 @@
 #define XTRA 1
 #define XTR2 2
 #define XTR3 3
-#define XTRA4 4
+#define XTR4 4
 #define GAME 5
 #define G1_1 6
 #define GTGL 7
@@ -30,7 +30,7 @@
 #define RGB_XTRA RGB_COLOR_HSB(183,45,18)      /* SUB-LAYOUT  - Teal */
 #define RGB_XTR2 RGB_COLOR_HSB(230,87,26)      /* SUB-LAYOUT  - Pale Blue */
 #define RGB_XTR3 RGB_COLOR_HSB(273,67,23)      /* SUB-LAYOUT  - Light Purple */
-#define RGB_XTRA4 RGB_COLOR_HSB(116,67,26)      /* SUB-LAYOUT  - Pale Green */
+#define RGB_XTR4 RGB_COLOR_HSB(116,67,26)      /* SUB-LAYOUT  - Pale Green */
 #define RGB_GAME RGB_COLOR_HSB(0,100,25)      /* SUB-BASE    - Red */
 #define RGB_G1_1 RGB_COLOR_HSB(116,67,50)      /* SUB-LAYOUT - Bright Yellow */
 #define RGB_GTGL RGB_COLOR_HSB(200,100,60)      /* GATEWAY - Cyan */
@@ -57,10 +57,10 @@
 #define RGB_F_BLINK_ON RGB_COLOR_HSB(73,67,60)      /* Functions - Bright Emerald */
 
 /* ---- (OPTIONAL) BLINK HELPERS ---- */
-#define RGB_RGB_BLINK_ON RGB_COLOR_HSB(39,100,75)      /* Blink On - Bright Yellow (change to whatever you want, multiple colors can be made like shown below) */
-#define RGB_RGB_N_BLINK_ON RGB_COLOR_HSB(0,100,60)      /* Num On - Bright Red */
-#define RGB_RGB_C_BLINK_ON RGB_COLOR_HSB(200,100,60)      /* Caps On - Cyan */
-#define RGB_RGB_F_BLINK_ON RGB_COLOR_HSB(73,67,60)      /* Functions - Bright Emerald */
+#define RGB_BLINK_ON RGB_COLOR_HSB(39,100,75)      /* Blink On - Bright Yellow (change to whatever you want, multiple colors can be made like shown below) */
+#define RGB_N_BLINK_ON RGB_COLOR_HSB(0,100,60)      /* Num On - Bright Red */
+#define RGB_C_BLINK_ON RGB_COLOR_HSB(200,100,60)      /* Caps On - Cyan */
+#define RGB_F_BLINK_ON RGB_COLOR_HSB(73,67,60)      /* Functions - Bright Emerald */
 
 /* ---- HELPER DEFINITIONS ---- */
 #define BLINK_SEQ(ON, OFF, WAIT) \
@@ -75,6 +75,7 @@
     &macro_tap &rgb_ug RGB_TOG \
     &macro_wait_time WAIT \
     &macro_tap &rgb_ug OFF
+    
 #define MO_RGB(node_name, node_label, layer, active_color, release_color) \
         ZMK_MACRO(node_name, \
             bindings = \
@@ -133,7 +134,7 @@
         /* Toggled and momentary macros for RGB layers */
         /* Momentary Layers:
         These are bound to a hold-tap behavior for full effect */
-        MO_RGB(mo_rgb_xtr4, "xtra2Layer Momentary LED", XTRA4, RGB_XTRA4, RGB_ABC)
+        MO_RGB(mo_rgb_xtr4, "xtra2Layer Momentary LED", XTR4, RGB_XTR4, RGB_ABC)
         MO_RGB(mo_rgb_xtra2, "KeyPadLayer Momentary LED", XTR2, RGB_XTR2, RGB_ABC)
         MO_RGB(mo_rgb_xtr3, "ExtraLayer Momentary LED", XTR3, RGB_XTR3, RGB_ABC)
         MO_RGB(mo_rgb_xtr, "NumberRowLayer Momentary LED", XTRA, RGB_XTRA, RGB_ABC)
@@ -162,13 +163,13 @@
             bindings = <
             &macro_param_1to1
             &macro_tap &kp MACRO_PLACEHOLDER
-            BLINK_SEQ(BLINK_ON, RGB_XTRA, 80)
+            BLINK_SEQ(RGB_BLINK_ON, RGB_XTRA, 80)
         >;
     }
     /* ---- (optional) BLINK/STATUS MACROS ---- */
     // EXPERIMENTAL (STANDALONE)
-        KP_BLINK(c_blink, "CAPS LOCK + BLINK", CAPS, C_BLINK_ON, RGB_ABC, 80)
-        KP_BLINK(n_blink, "NUM LOCK + BLINK", KP_NUMLOCK, N_BLINK_ON, RGB_ABC, 80)
+        KP_BLINK(c_blink, "CAPS LOCK + BLINK", CAPS, RGB_C_BLINK_ON, RGB_ABC, 80)
+        KP_BLINK(n_blink, "NUM LOCK + BLINK", KP_NUMLOCK, RGB_N_BLINK_ON, RGB_ABC, 80)
     /* ---- STEP 4: BEHAVIORS - HOLD-TAP ---- */
     behaviors {
         RGB_HT(RGB_ht_xtr, "RGB HOLD_TAP_XTR", mo_rgb_xtra)
