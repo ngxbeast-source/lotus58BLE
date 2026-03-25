@@ -51,6 +51,8 @@
 #define RGB_T2_2 RGB_COLOR_HSB(74,75,38)      /* SUB-LAYOUT */
 #define RGB_T2_3 RGB_COLOR_HSB(125,75,40)      /* SUB-LAYOUT */
 #define RGB_T2_4 RGB_COLOR_HSB(175,75,40)      /* SUB-LAYOUT */
+
+/* ---- (OPTIONAL) BLINK HELPERS ---- */
 #define RGB_BLINK_ON RGB_COLOR_HSB(39,100,75)      /* Blink On - Bright Yellow (change to whatever you want, multiple colors can be made like shown below) */
 #define RGB_N_BLINK_ON RGB_COLOR_HSB(0,100,60)      /* Num On - Bright Red */
 #define RGB_C_BLINK_ON RGB_COLOR_HSB(200,100,60)      /* Caps On - Cyan */
@@ -126,36 +128,47 @@
         /* Toggled and momentary macros for RGB layers */
         /* Momentary Layers:
         These are bound to a hold-tap behavior for full effect */
-        MO_RGB(mo_rgb_xtr4, "xtra2Layer Momentary LED", XTR4, RGB_XTR4, RGB_ABC)
-        MO_RGB(mo_rgb_xtra2, "KeyPadLayer Momentary LED", XTR2, RGB_XTR2, RGB_ABC)
-        MO_RGB(mo_rgb_xtr3, "ExtraLayer Momentary LED", XTR3, RGB_XTR3, RGB_ABC)
-        MO_RGB(mo_rgb_xtra, "NumberRowLayer Momentary LED", XTRA, RGB_XTRA, RGB_ABC)
-        MO_RGB(mo_rgb_g1_s1, "GameLayer Sublayer Momentary LED", G1_1, RGB_G1_1, RGB_GAME)
-        MO_RGB(mo_rgb_t2_s1, "ToggleLayer2 SubLayer1 Momentary LED", T2_1, RGB_T2_1, RGB_T2)
-        MO_RGB(mo_rgb_t1_s1, "ToggleLayer1 Sublayer1 Momentary LED", T1_1, RGB_T1_1, RGB_T1)
-        MO_RGB(mo_rgb_g2_s1, "GameLayer2 SubLayer1 Momentary LED", G2_1, RGB_G2_1, RGB_GME2)
+        MO_RGB(mo_rgb_xtr4, "Base_Sublayout4 Momentary LED - STANDALONE: OR USE HT RGB FOR KEYPRESS", XTR4, RGB_XTR4, RGB_ABC)
+        MO_RGB(mo_rgb_xtra2, "Base_Sublayout2 Momentary LED - STANDALONE: OR USE HT RGB FOR KEYPRESS", XTR2, RGB_XTR2, RGB_ABC)
+        MO_RGB(mo_rgb_xtr3, "Base_Sublayout3 Momentary LED - STANDALONE: OR USE HT RGB FOR KEYPRESS", XTR3, RGB_XTR3, RGB_ABC)
+        MO_RGB(mo_rgb_xtra, "Base_Sublayout1 Momentary LED - STANDALONE: OR USE HT RGB FOR KEYPRESS", XTRA, RGB_XTRA, RGB_ABC)
+        MO_RGB(mo_rgb_g1_s1, "Game1 SubLayout1 Momentary LED - STANDALONE: OR USE HT RGB FOR KEYPRESS", G1_1, RGB_G1_1, RGB_GAME)
+        MO_RGB(mo_rgb_t2_s1, "SubBase2 SubLayout1 Momentary LED - STANDALONE: OR USE HT RGB FOR KEYPRESS", T2_1, RGB_T2_1, RGB_T2)
+        MO_RGB(mo_rgb_t1_s1, "SubBase1 SubLayout1 Momentary LED - STANDALONE: OR USE HT RGB FOR KEYPRESS", T1_1, RGB_T1_1, RGB_T1)
+        MO_RGB(mo_rgb_g2_s1, "Game2 SubLayout1 Momentary LED - STANDALONE: OR USE HT RGB FOR KEYPRESS", G2_1, RGB_G2_1, RGB_GME2)
+        MO_RGB(mo_rgb_g3_s1, "Game3 SubLayout1 Momentary RGB - STANDALONE: OR USE HT RGB FOR KEYPRESS", G3_1, RGB_G3_1, RGB_GME3)
+        MO_RGB(mo_rgb_g4_s1, "Game4 SubLayout1 Momentary RGB - STANDALONE: OR USE HT RGB FOR KEYPRESS", G4_1, RGB_G4_1, RGB_GME4)
+        MO_RGB(mo_rgb_t1_s2, "SubBase1 SubLayout2 Momentary RGB - STANDALONE: OR USE HT RGB FOR KEYPRESS", T1_2, RGB_T1_2, RGB_T1)
+        MO_RGB(mo_rgb_t1_s3, "SubBase1 SubLayout3 Momentary RGB - STANDALONE: OR USE HT RGB FOR KEYPRESS", T1_3, RGB_T1_3, RGB_T1)
+        MO_RGB(mo_rgb_t1_s4, "SubBase1 SubLayout4 Momentary RGB - STANDALONE: OR USE HT RGB FOR KEYPRESS", T1_4, RGB_T1_4, RGB_T1)
+        MO_RGB(mo_rgb_t2_s2, "SubBase2 SubLayout2 Momentary RGB - STANDALONE: OR USE HT RGB FOR KEYPRESS", T2_2, RGB_T2_2, RGB_T2)
+        MO_RGB(mo_rgb_t2_s3, "SubBase2 SubLayout3 Momentary RGB - STANDALONE: OR USE HT RGB FOR KEYPRESS", T2_3, RGB_T2_3, RGB_T2)
+        MO_RGB(mo_rgb_t2_s4, "SubBase2 SubLayout4 Momentary RGB - STANDALONE: OR USE HT RGB FOR KEYPRESS", T2_4, RGB_T2_4, RGB_T2)
         /* TOGGLED Layers:
         These are bound straight to the keymap, OR to a combo. */
-        TO_RGB(to_rgb_default, "Toggle Base Layer LED", ABC, RGB_ABC)
-        TO_RGB(to_rgb_t1, "Toggle ToggleLayer1 LED", T1, RGB_T1)
-        TO_RGB(to_rgb_t2, "Toggle ToggleLayer2 LED", T2, RGB_T2)
-        TO_RGB(to_rgb_game, "Toggle GameLayer LED", GAME, RGB_GAME)
-        TO_RGB(to_rgb_g2_s1, "Toggle Game2 SubLayer1 LED", G2_1, RGB_G2_1)
-        TO_RGB(to_rgb_g2, "Toggle Game2 LED", GME2, RGB_GME2)
-        //Toggle Layers/Gateways
-        TO_RGB_PRESS(top_rgb_toglayers, "TO PRESS ToggleLayer", GATE, RGB_GATE)
-        TO_RGB_PRESS(top_rgb_gtog, "TO PRESS GameToggle", GG8, RGB_GG8)
+        TO_RGB(to_rgb_default, "Toggle Base RGB - USED FOR COMBO PATHING", ABC, RGB_ABC)
+        TO_RGB(to_rgb_game, "Toggle Game1 RGB - USED FOR COMBO PATHING", GAME, RGB_GAME)
+        TO_RGB(to_rgb_t1, "Toggle SubBase1 RGB - USE IN GATEWAY LAYER", T1, RGB_T1)
+        TO_RGB(to_rgb_t2, "Toggle SubBase2 RGB - USE IN GATEWAY LAYER", T2, RGB_T2)
+        TO_RGB(to_rgb_g2, "Toggle Game2 RGB - USE IN GAME GATE LAYER", GME2, RGB_GME2)
+        TO_RGB(to_rgb_g3, "Toggle Game3 RGB - USE IN GAME GATE LAYER", GME3, RGB_GME3)
+        TO_RGB(to_rgb_g4, "Toggle Game4 RGB - USE IN GAME GATE LAYER", GME4, RGB_GME4)
+        //Gateways
+        TO_RGB_PRESS(top_rgb_toglayers, "TO PRESS ToggleLayer - USED FOR COMBOS", GATE, RGB_GATE)
+        TO_RGB_PRESS(top_rgb_gtog, "TO PRESS GameToggle - USED FOR COMBOS", GG8, RGB_GG8)
+
+
     };
     blnk: blnk {
-                compatible = "zmk,behavior-macro-one-param";
-                label = "Configurable Blink";
-                #binding-cells = <1>;
-                wait-ms = <0>;
-                tap-ms  = <0>;
-                bindings = <
-                &macro_param_1to1
-                &macro_tap &kp MACRO_PLACEHOLDER
-                BLINK_SEQ(RGB_BLINK_ON, RGB_XTRA, 80)
+            compatible = "zmk,behavior-macro-one-param";
+            label = "Configurable Blink";
+            #binding-cells = <1>;
+            wait-ms = <0>;
+            tap-ms  = <0>;
+            bindings = <
+            &macro_param_1to1
+            &macro_tap &kp MACRO_PLACEHOLDER
+            BLINK_SEQ(RGB_BLINK_ON, RGB_XTRA, 80)
             >;
         };
     /* ---- (optional) BLINK/STATUS MACROS ---- */
@@ -164,43 +177,51 @@
         KP_BLINK(n_blink, "NUM LOCK + BLINK", KP_NUMLOCK, RGB_N_BLINK_ON, RGB_ABC, 80)
     /* ---- STEP 4: BEHAVIORS - HOLD-TAP ---- */
     behaviors {
-        RGB_HT(RGB_ht_xtr, "RGB HOLD_TAP_XTR", mo_rgb_xtra)
-        RGB_HT(RGB_ht_xtr2, "RGB HOLD_TAP_XTR2", mo_rgb_xtra2)
-        RGB_HT(RGB_ht_xtra4, "RGB HOLD_TAP_XTRA4", mo_rgb_xtr4)
-        RGB_HT(RGB_ht_xtr3, "RGB HOLD_TAP_XTR3", mo_rgb_xtr3)
-        RGB_HT(RGB_ht_g1_s1, "RGB HOLD_TAP_Game1_SubLayer1", mo_rgb_g1_s1)
-        RGB_HT(RGB_ht_t2_s1, "RGB HOLD_TAP_Layer2_SubLayer1", mo_rgb_t2_s1)
-        RGB_HT(RGB_ht_g2_s1, "RGB HOLD_TAP_Game2_SubLayer1", mo_rgb_g2_s1)
-        RGB_HT(RGB_ht_t1_s1, "RGB HOLD_TAP_ToggleLayer1_SubLayer1", mo_rgb_t1_s1)
+        RGB_HT(RGB_ht_xtr, "RGB HT Base_SubLayout1", mo_rgb_xtra)
+        RGB_HT(RGB_ht_xtr2, "RGB HT Base_SubLayout2", mo_rgb_xtra2)
+        RGB_HT(RGB_ht_xtra4, "RGB HT Base_SubLayout3", mo_rgb_xtr4)
+        RGB_HT(RGB_ht_xtr3, "RGB HT Base_SubLayout4", mo_rgb_xtr3)
+        RGB_HT(RGB_ht_g1_s1, "RGB HT Game1_SubLayout1", mo_rgb_g1_s1)
+        RGB_HT(RGB_ht_t2_s1, "RGB HT Layer2_SubLayout1", mo_rgb_t2_s1)
+        RGB_HT(RGB_ht_g2_s1, "RGB HT Game2_SubLayout1", mo_rgb_g2_s1)
+        RGB_HT(RGB_ht_t1_s1, "RGB HT ToggleLayer1_SubLayout1", mo_rgb_t1_s1)
+        RGB_HT(RGB_ht_g3_s1, "RGB HT Game3 SubLayout1", mo_rgb_g3_s1)
+        RGB_HT(RGB_ht_g4_s1, "RGB HT Game4 SubLayout1", mo_rgb_g4_s1)
+        RGB_HT(RGB_ht_t1_s2, "RGB HT SubBase1 SubLayout2", mo_rgb_t1_s2)
+        RGB_HT(RGB_ht_t1_s3, "RGB HT SubBase1 SubLayout3", mo_rgb_t1_s3)
+        RGB_HT(RGB_ht_t1_s4, "RGB HT SubBase1 SubLayout4", mo_rgb_xtr4)
+        RGB_HT(RGB_ht_t2_s2, "RGB HT SubBase2 SubLayout2", mo_rgb_t2_s2)
+        RGB_HT(RGB_ht_t2_s3, "RGB HT SubBase2 SubLayout3", mo_rgb_t2_s3)
+        RGB_HT(RGB_ht_t2_s4, "RGB HT SubBase2 SubLayout4", mo_rgb_t2_s4)
 
         hm: homerow_mods {
-                    compatible = "zmk,behavior-hold-tap";
-                    label = "HOMEROW_MODS";
-                    #binding-cells = <2>;
-                    tapping-term-ms = <200>;
-                    quick_tap_ms = <0>;
-                    flavor = "tap-preferred";
-                    bindings = <&kp>, <&kp>;
-                    quick-tap-ms = <180>;
-                    global-quick-tap;
-                };
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+            quick-tap-ms = <180>;
+            global-quick-tap;
+        };
 
         ltq: ltq {
-                    compatible = "zmk,behavior-hold-tap";
-                    label = "LTQ";
-                    bindings = <&mo>, <&kp>;
-                    #binding-cells = <2>;
-                    tapping-term-ms = <600>;
-                    global-quick-tap;
-                    quick-tap-ms = <400>;
-                };
+            compatible = "zmk,behavior-hold-tap";
+            label = "LTQ";
+            bindings = <&mo>, <&kp>;
+            #binding-cells = <2>;
+            tapping-term-ms = <600>;
+            global-quick-tap;
+            quick-tap-ms = <400>;
+        };
 
         td_numcaps: td_numcaps {
-                    compatible = "zmk,behavior-tap-dance";
-                    #binding-cells = <0>;
-                    tapping-term-ms = <300>;
-                    bindings = <&kp LSFT>, <&c_blink>, <&n_blink>;
-                };
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp LSFT>, <&c_blink>, <&n_blink>;
+        };
     };
     /* ---- (OPTIONAL) STEP 5: COMBOS ---- */
     combos {
@@ -216,10 +237,10 @@
         //Pathing
         // Gateways
         CMB(toggleLayer, &top_rgb_toglayers, 55 56, ABC T1 T2);
-        CMB(game_toggle, &top_rgb_gtog, 55 56, GAME GME2);
+        CMB(game_toggle, &top_rgb_gtog, 55 56, GAME GME2 GME3 GME4);
         // To (Sub)Base
         CMB(gameLayer_2_BaseLayer, &to_rgb_default, 0 11, GAME);
-        CMB(gameLayer, &to_rgb_game, 0 11, ABC GATE GME2);
+        CMB(gameLayer, &to_rgb_game, 0 11, ABC GATE GME2 GME3 GME4);
         // "Exit" Combos; Return to (Sub)Base
         CMB(toggleLayer_2_BaseLayer, &to_rgb_default, 55 56, GATE);
         CMB(game_toggle_2_game, &to_rgb_game, 55 56, GG8);
