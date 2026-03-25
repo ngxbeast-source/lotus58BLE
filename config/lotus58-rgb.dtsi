@@ -127,7 +127,7 @@
             bindings = <&macro_tap &kp key>, \
             <BLINK_SEQ(blink_color, return_color, wait)>; \
         )
- /{
+/{
     /* ---- STEP 2+3: MACROS ---- */
     macros {
         /* Toggled and momentary macros for RGB layers */
@@ -223,7 +223,7 @@
         CMB(pipe, &kp PIPE, 17 18, ABC);
         //Pathing
         // Gateways
-        CMB(toggleLayer, &top_rgb_toglayer, 55 56, ABC T1 T2);
+        CMB(toggleLayer, &top_rgb_toglayers, 55 56, ABC T1 T2);
         CMB(game_toggle, &top_rgb_gtog, 55 56, GAME GME2);
         // To (Sub)Base
         CMB(gameLayer_2_BaseLayer, &to_rgb_default, 0 11, GAME);
