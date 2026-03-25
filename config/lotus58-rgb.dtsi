@@ -195,7 +195,7 @@
                     quick-tap-ms = <400>;
                 };
 
-        td_numcaps: td_numcapsBLINK {
+        td_numcaps: td_numcaps {
                     compatible = "zmk,behavior-tap-dance";
                     #binding-cells = <0>;
                     tapping-term-ms = <300>;
