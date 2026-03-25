@@ -40,7 +40,7 @@
 #define RGB_G3_1 RGB_COLOR_HSB(58,100,40)      /* SUB-LAYOUT */
 #define RGB_GME4 RGB_COLOR_HSB(138,100,18)      /* SUB-BASE */
 #define RGB_G4_1 RGB_COLOR_HSB(58,100,40)      /* SUB-LAYOUT */
-#define RGB_TOG RGB_COLOR_HSB(251,67,60)      /* GATEWAY - Indigo */
+#define RGB_LYR_TOG RGB_COLOR_HSB(251,67,60)      /* GATEWAY - Indigo */
 #define RGB_T1 RGB_COLOR_HSB(40,50,12)      /* SUB-BASE  - Yellow */
 #define RGB_T1_1 RGB_COLOR_HSB(58,50,20)      /* SUB-LAYOUT */
 #define RGB_T1_2 RGB_COLOR_HSB(211,50,40)      /* SUB-LAYOUT */
@@ -51,12 +51,6 @@
 #define RGB_T2_2 RGB_COLOR_HSB(74,75,38)      /* SUB-LAYOUT */
 #define RGB_T2_3 RGB_COLOR_HSB(125,75,40)      /* SUB-LAYOUT */
 #define RGB_T2_4 RGB_COLOR_HSB(175,75,40)      /* SUB-LAYOUT */
-#define RGB_BLINK_ON RGB_COLOR_HSB(39,100,75)      /* Blink On - Bright Yellow (change to whatever you want, multiple colors can be made like shown below) */
-#define RGB_N_BLINK_ON RGB_COLOR_HSB(0,100,60)      /* Num On - Bright Red */
-#define RGB_C_BLINK_ON RGB_COLOR_HSB(200,100,60)      /* Caps On - Cyan */
-#define RGB_F_BLINK_ON RGB_COLOR_HSB(73,67,60)      /* Functions - Bright Emerald */
-
-/* ---- (OPTIONAL) BLINK HELPERS ---- */
 #define RGB_BLINK_ON RGB_COLOR_HSB(39,100,75)      /* Blink On - Bright Yellow (change to whatever you want, multiple colors can be made like shown below) */
 #define RGB_N_BLINK_ON RGB_COLOR_HSB(0,100,60)      /* Num On - Bright Red */
 #define RGB_C_BLINK_ON RGB_COLOR_HSB(200,100,60)      /* Caps On - Cyan */
@@ -75,7 +69,6 @@
     &macro_tap &rgb_ug RGB_TOG \
     &macro_wait_time WAIT \
     &macro_tap &rgb_ug OFF
-    
 #define MO_RGB(node_name, node_label, layer, active_color, release_color) \
         ZMK_MACRO(node_name, \
             bindings = \
@@ -128,7 +121,7 @@
             bindings = <&macro_tap &kp key>, \
             <BLINK_SEQ(blink_color, return_color, wait)>; \
         )
-/{
+ /{
     /* ---- STEP 2+3: MACROS ---- */
     macros {
         /* Toggled and momentary macros for RGB layers */
@@ -151,21 +144,21 @@
         TO_RGB(to_rgb_g2_s1, "Toggle Game2 SubLayer1 LED", G2_1, RGB_G2_1)
         TO_RGB(to_rgb_g2, "Toggle Game2 LED", GME2, RGB_GME2)
         //Toggle Layers/Gateways
-        TO_RGB_PRESS(top_rgb_toglayers, "TO PRESS ToggleLayer", TOG, RGB_TOG)
+        TO_RGB_PRESS(top_rgb_toglayers, "TO PRESS ToggleLayer", TOG, RGB_LYR_TOG)
         TO_RGB_PRESS(top_rgb_gtog, "TO PRESS GameToggle", GTGL, RGB_GTGL)
     };
     blnk: blnk {
-            compatible = "zmk,behavior-macro-one-param";
-            label = "Configurable Blink";
-            #binding-cells = <1>;
-            wait-ms = <0>;
-            tap-ms  = <0>;
-            bindings = <
-            &macro_param_1to1
-            &macro_tap &kp MACRO_PLACEHOLDER
-            BLINK_SEQ(RGB_BLINK_ON, RGB_XTRA, 80)
-        >;
-    }
+                compatible = "zmk,behavior-macro-one-param";
+                label = "Configurable Blink";
+                #binding-cells = <1>;
+                wait-ms = <0>;
+                tap-ms  = <0>;
+                bindings = <
+                &macro_param_1to1
+                &macro_tap &kp MACRO_PLACEHOLDER
+                BLINK_SEQ(RGB_BLINK_ON, RGB_XTRA, 80)
+            >;
+        };
     /* ---- (optional) BLINK/STATUS MACROS ---- */
     // EXPERIMENTAL (STANDALONE)
         KP_BLINK(c_blink, "CAPS LOCK + BLINK", CAPS, RGB_C_BLINK_ON, RGB_ABC, 80)
@@ -183,33 +176,33 @@
         RGB_HT(BLINK_ht_f, "f blink test; &kp BINDABEL", f_blink_sa)
 
         hm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-            quick-tap-ms = <180>;
-            global-quick-tap;
-        }
+                    compatible = "zmk,behavior-hold-tap";
+                    label = "HOMEROW_MODS";
+                    #binding-cells = <2>;
+                    tapping-term-ms = <200>;
+                    quick_tap_ms = <0>;
+                    flavor = "tap-preferred";
+                    bindings = <&kp>, <&kp>;
+                    quick-tap-ms = <180>;
+                    global-quick-tap;
+                };
 
         ltq: ltq {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LTQ";
-            bindings = <&mo>, <&kp>;
-            #binding-cells = <2>;
-            tapping-term-ms = <600>;
-            global-quick-tap;
-            quick-tap-ms = <400>;
-        }
+                    compatible = "zmk,behavior-hold-tap";
+                    label = "LTQ";
+                    bindings = <&mo>, <&kp>;
+                    #binding-cells = <2>;
+                    tapping-term-ms = <600>;
+                    global-quick-tap;
+                    quick-tap-ms = <400>;
+                };
 
         td_numcaps: td_numcapsBLINK {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <300>;
-            bindings = <&kp LSFT>, <&c_blink>, <&n_blink>;
-        }
+                    compatible = "zmk,behavior-tap-dance";
+                    #binding-cells = <0>;
+                    tapping-term-ms = <300>;
+                    bindings = <&kp LSFT>, <&c_blink>, <&n_blink>;
+                };
     };
     /* ---- (OPTIONAL) STEP 5: COMBOS ---- */
     combos {
