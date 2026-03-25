@@ -130,7 +130,7 @@
         MO_RGB(mo_rgb_xtr4, "xtra2Layer Momentary LED", XTR4, RGB_XTR4, RGB_ABC)
         MO_RGB(mo_rgb_xtra2, "KeyPadLayer Momentary LED", XTR2, RGB_XTR2, RGB_ABC)
         MO_RGB(mo_rgb_xtr3, "ExtraLayer Momentary LED", XTR3, RGB_XTR3, RGB_ABC)
-        MO_RGB(mo_rgb_xtr, "NumberRowLayer Momentary LED", XTRA, RGB_XTRA, RGB_ABC)
+        MO_RGB(mo_rgb_xtra, "NumberRowLayer Momentary LED", XTRA, RGB_XTRA, RGB_ABC)
         MO_RGB(mo_rgb_g1_s1, "GameLayer Sublayer Momentary LED", G1_1, RGB_G1_1, RGB_GAME)
         MO_RGB(mo_rgb_t2_s1, "ToggleLayer2 SubLayer1 Momentary LED", T2_1, RGB_T2_1, RGB_T2)
         MO_RGB(mo_rgb_t1_s1, "ToggleLayer1 Sublayer1 Momentary LED", T1_1, RGB_T1_1, RGB_T1)
@@ -173,7 +173,6 @@
         RGB_HT(RGB_ht_t2_s1, "RGB HOLD_TAP_Layer2_SubLayer1", mo_rgb_t2_s1)
         RGB_HT(RGB_ht_g2_s1, "RGB HOLD_TAP_Game2_SubLayer1", mo_rgb_g2_s1)
         RGB_HT(RGB_ht_t1_s1, "RGB HOLD_TAP_ToggleLayer1_SubLayer1", mo_rgb_t1_s1)
-        RGB_HT(BLINK_ht_f, "f blink test; &kp BINDABEL", f_blink_sa)
 
         hm: homerow_mods {
                     compatible = "zmk,behavior-hold-tap";
