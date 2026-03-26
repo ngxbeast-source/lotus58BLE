@@ -126,7 +126,7 @@
     /* ---- STEP 2+3: MACROS ---- */
     macros {
         /* Toggled and momentary macros for RGB layers */
-        /* Momentary Layers:
+        /* Momentary Layers/Sub-Layouts:
         These are bound to a hold-tap behavior for full effect */
         MO_RGB(mo_rgb_xtr4, "Base_4 MoRGB: OR USE HT RGB", XTR4, RGB_XTR4, RGB_ABC)
         MO_RGB(mo_rgb_xtra2, "Base_2 MoRGB: OR USE HT RGB", XTR2, RGB_XTR2, RGB_ABC)
@@ -144,7 +144,7 @@
         MO_RGB(mo_rgb_t2_s2, "Base2_2 MoRGB: OR USE HT RGB", T2_2, RGB_T2_2, RGB_T2)
         MO_RGB(mo_rgb_t2_s3, "Base2_3 MoRGB: OR USE HT RGB", T2_3, RGB_T2_3, RGB_T2)
         MO_RGB(mo_rgb_t2_s4, "Base2_4 MoRGB: OR USE HT RGB", T2_4, RGB_T2_4, RGB_T2)
-        /* TOGGLED Layers:
+        /* Sub-Base Toggles:
         These are bound straight to the keymap, OR to a combo. */
         TO_RGB(to_rgb_default, "To Base RGB;USED FOR COMBO", ABC, RGB_ABC)
         TO_RGB(to_rgb_game, "To Game1 RGB;USED FOR COMBO", GAME, RGB_GAME)
@@ -174,7 +174,7 @@
         KP_BLINK(c_blink, "CAPS LOCK + BLINK", CAPS, RGB_C_BLINK_ON, RGB_ABC, 80)
         KP_BLINK(n_blink, "NUM LOCK + BLINK", KP_NUMLOCK, RGB_N_BLINK_ON, RGB_ABC, 80)
     /* ---- STEP 4: BEHAVIORS - HOLD-TAP ---- 
-                    Sub-Layouts */
+                    Sub-Layouts; These Exist Under Sub-Bases*/
     behaviors {
         RGB_HT(RGB_ht_xtr, "RGB HT Base_SubLayout1", mo_rgb_xtra)
         RGB_HT(RGB_ht_xtr2, "RGB HT Base_SubLayout2", mo_rgb_xtra2)
